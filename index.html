@@ -6,18 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAE Transparencia</title>
-    <link rel="stylesheet" type="text/css" href="./res/wire/wire.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./res/layout.css" />
 </head>
 
 <body>
-    <div data-grid="row">
-        <div class="col-2">
-            <p>Sae Transparencia</p>
-            <p>Digite seu municipio</p>
-            <input id="pac-input" type="text"/>
+
+    <section class="hero is-info is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Sistema de Auditoria Eletronica do Maranhão
+                </h1>
+                <h2 class="subtitle">
+                    Modulo de transparencia
+                </h2>
+            </div>
         </div>
-        <div class="col-10" id="map"></div>
+    </section>
+
+    <div class="columns">
+        <div class="column">
+            <div class="field">
+                <label class="label">Digite seu municipio</label>
+                <div class="control">
+                    <input class="input" type="text" id="pac-input" placeholder="Text input">
+                </div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column" id="map"></div>
     </div>
 
 
@@ -32,8 +52,11 @@
 
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: -33.8688, lng: 151.2195 },
-                zoom: 13,
+                center: {
+                    lat: -6.9609,
+                    lng: -45.2744
+                },
+                zoom: 6,
                 mapTypeId: 'roadmap'
             });
 
@@ -96,9 +119,9 @@
                 map.fitBounds(bounds);
             });
         }
-
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfXuO38oiSFLfMTOw09-3z1gpSgQJWZiQ&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfXuO38oiSFLfMTOw09-3z1gpSgQJWZiQ&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
 </body>
 
