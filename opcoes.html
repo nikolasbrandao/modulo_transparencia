@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="#" class="card-footer-item">Consultar</a>
+                        <a href="#" class="card-footer-item" id="open-modal">Consultar</a>
                     </footer>
                 </div>
             </div>
@@ -145,6 +145,48 @@
         </div>
     </div>
 
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Despesa</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Selecione o relatorio com as informações</label>
+                    <div class="control">
+                        <div class="select">
+                            <select>
+                                <option>Selecione uma opção</option>
+                                <option>Planejamento e execução orçamentaria por Ação</option>
+                                <option disabled>Planejamento e execução orçamentaria por Teste</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <a class="button" href="./receita.html">Acessar</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('a#open-modal').addEventListener('click', function (event) {
+            event.preventDefault();
+            var modal = document.querySelector('.modal'); // assuming you have only 1
+            var html = document.querySelector('html');
+            modal.classList.add('is-active');
+            html.classList.add('is-clipped');
+
+            modal.querySelector('.modal-background').addEventListener('click', function (e) {
+                e.preventDefault();
+                modal.classList.remove('is-active');
+                html.classList.remove('is-clipped');
+            });
+        });
+    </script>
 </body>
 
 </html>
